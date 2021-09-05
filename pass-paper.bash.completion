@@ -1,0 +1,7 @@
+PASSWORD_STORE_EXTENSION_COMMANDS+=(paper)
+
+__password_store_extension_complete_paper() {
+    local args=(-h --help -s --sep -V --version)
+    COMPREPLY+=($(compgen -W "${args[*]}" -- ${cur}))
+    _pass_complete_entries
+}
