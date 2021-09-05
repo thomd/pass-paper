@@ -33,6 +33,8 @@ separator are printed, all lines below the separator are **not** printed.
 
 ## Usage
 
+:warning: Always pipe output to `lp(1)` to avoid having password in plain text in a file.
+
 Print all passwords with
 
     pass paper | lp
