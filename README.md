@@ -1,12 +1,14 @@
 # Paper Backup for pass
 
-An extension for [pass(1)](https://www.passwordstore.org/) - the standard Unix password manager - to backup all passwords to paper (being aware of the risks).
+An extension for [pass(1)](https://www.passwordstore.org/) - the standard Unix password manager - to backup all passwords to paper.
+
+:warning: Always know what you are doing! Be aware of the risks!
 
 ## Install
 
     make install
 
-The extension is installed into `~/.password-store/.extensions/` and must be enabled by setting the `PASSWORD_STORE_ENABLE_EXTENSIONS` environment variable:
+The extension is installed into `~/.password-store/.extensions/` and must be enabled with:
 
     export PASSWORD_STORE_ENABLE_EXTENSIONS=true 
 
@@ -33,15 +35,18 @@ separator are printed, all lines below the separator are **not** printed.
 
 ## Usage
 
-:warning: Always pipe output to `lp(1)` to avoid having password in plain text in a file.
+:warning: Always pipe output to `lp(1)` or `lpr(1)` to avoid having password in plain text in a file. If `pass paper` is
+used to print to `stdout`, you are prompted to confirm.
+
+:warning: Before printing, verify your default printer.
 
 Print all passwords with
 
     pass paper | lp
 
-Print all passwords in a printer-friendly format with
+Print all passwords in a printer-friendly format (see `pr(1)`) with
 
-    pass paper | pr | lp
+    pass paper | pr | lp -o media=A4 -o number-up=2
 
 Print all password from 'folder' with
 

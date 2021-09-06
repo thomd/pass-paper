@@ -37,6 +37,13 @@ cmd_paper_usage() {
 _EOF
 }
 
+_yesno() {
+  echo
+  read -r -p "  do you really want to print your passwords to stdout? [y/N] " response
+  [[ $response == "y" || $response == "Y" ]] || exit 1
+  echo
+}
+
 _title() {
   local pad
   # shellcheck disable=SC2046
@@ -103,7 +110,16 @@ while true; do case $1 in
   --) shift; break ;;
 esac done
 
-[[ $err -ne 0 ]] && cmd_paper_usage && exit 1
-[[ "$COMMAND" == "paper" ]] && cmd_paper "$@"
+if [ $err -ne 0 ]; then
+  cmd_paper_usage
+  exit 1
+fi
+
+if [ "$COMMAND" == "paper" ]; then
+  if [ -t 1 ]; then
+    _yesno
+  fi
+  cmd_paper "$@"
+fi
 
 exit 0
