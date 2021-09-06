@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-readonly VERSION="1.1"
+readonly VERSION="1.2"
 readonly LINE_WIDTH=72
 SEPARATOR="="
 
