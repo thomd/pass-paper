@@ -8,9 +8,9 @@ An extension for [pass(1)](https://www.passwordstore.org/) - the standard Unix p
 
     make install
 
-The extension is installed into `~/.password-store/.extensions/` and must be enabled with:
+The extension is installed into `~/.password-store/.extensions/` and must be enabled with (you might need add this into your `.bashrc`):
 
-    export PASSWORD_STORE_ENABLE_EXTENSIONS=true 
+    export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 This extension is only tested for **macOS**.
 
@@ -21,7 +21,7 @@ This extension is only tested for **macOS**.
 ## Output
 
 `pass paper` prints only content above a separator (default separator is `=======`): all lines above the
-separator are printed, all lines below the separator are **not** printed.
+separator are printed, all lines below the separator are **not** printed (including the separator).
 
 ### Example Output
 
@@ -48,7 +48,7 @@ Print all passwords in a printer-friendly format (see `pr(1)`) with
 
     pass paper | pr | lp -o media=A4 -o number-up=2
 
-Print all password from 'folder' with
+Print all passwords from 'folder' with
 
     pass paper folder | lp
 
@@ -56,7 +56,7 @@ Print password 'folder/password' with
 
     pass paper folder/password | lp
 
-Print all passwords with content above separator `<<<<<<<` (7 chars minimum) with
+Print all passwords with content above separator `<<<<<<<` (7 chars or more) with
 
     pass paper -s '<' | lp
 
