@@ -23,17 +23,18 @@ cmd_paper_usage() {
 
   OPTIONS:
 
-    -s, --sep SEPARATOR                  Use SEPARATOR char to separate non-printable content (default is 7 '${SEPARATOR}')
-    -V, --version                        Show version information
-    -h, --help                           Print this help message and exit
+    -s, --sep SEPARATOR          Use SEPARATOR char to separate non-printable content (default is 7 '${SEPARATOR}')
+    -V, --version                Show version information
+    -h, --help                   Print this help message and exit
 
   EXAMPLES:
 
-    pass paper | lp                      Print all passwords
-    pass paper | pr | lp                 Print all passwords in a printer-friendly format
-    pass paper folder | lp               Print all password from 'folder'
-    pass paper folder/password | lp      Print password 'folder/password'
-    pass paper -s '<' | lp               Print all passwords with content above separator '<<<<<<<' (7 chars minimim)
+    pass paper | lp                                       Print all passwords
+    pass paper | pr | lp                                  Print all passwords in a printer-friendly format
+    pass paper | pr | lp -o media=A4 -o number-up=4       Print all passwords with 4 pages per sheet
+    pass paper folder | lp                                Print all password from 'folder'
+    pass paper folder/password | lp                       Print password 'folder/password'
+    pass paper -s '<' | lp                                Print all passwords with content above separator '<<<<<<<' (7 chars minimim)
 _EOF
 }
 
