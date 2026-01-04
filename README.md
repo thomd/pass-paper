@@ -2,8 +2,8 @@
 
 An extension for [pass(1)](https://www.passwordstore.org/) - the standard Unix password manager - to backup all passwords to paper.
 
-[!CAUTION]
-Always know what you are doing! Be aware of the risks!
+> [!CAUTION]
+> Always know what you are doing! Be aware of the risks!
 
 ## Install
 
@@ -36,10 +36,12 @@ separator are printed, all lines below the separator are **not** printed (includ
 
 ## Usage
 
-:warning: Always pipe output to `lp(1)` or `lpr(1)` to avoid having password in plain text in a file. If `pass paper` is
+> [!WARNING]
+> Always pipe output to `lp(1)` or `lpr(1)` to avoid having password in plain text in a file. If `pass paper` is
 used to print to `stdout`, you are prompted to confirm.
 
-:warning: Before printing, verify your default printer.
+> [!WARNING]
+> Before printing, verify your default printer.
 
 Print all passwords with
 
