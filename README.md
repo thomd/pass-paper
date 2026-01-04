@@ -1,8 +1,9 @@
-# Paper Backup for pass
+# pass paper
 
 An extension for [pass(1)](https://www.passwordstore.org/) - the standard Unix password manager - to backup all passwords to paper.
 
-:warning: Always know what you are doing! Be aware of the risks!
+[!CAUTION]
+Always know what you are doing! Be aware of the risks!
 
 ## Install
 
